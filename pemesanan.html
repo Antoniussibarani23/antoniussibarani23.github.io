@@ -1,0 +1,109 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>FORM PEMBAYARAN RESTORAN</title>
+
+<script language = "JavaScript" type="text/JavaScript">
+<!--
+function Restaurant()
+{
+var tulis = document.formRestaurant;
+var hargapesto = parseInt(tulis.pesto.value) * parseInt(tulis.pesto1.value);
+var hargacannelloni = parseInt(tulis.cannelloni.value) * parseInt(tulis.cannelloni1.value);
+var hargatortellini= parseInt(tulis.tortellini.value) * parseInt(tulis.tortellini1.value);
+var hargaespresso = parseInt(tulis.espresso.value) * parseInt(tulis.espresso1.value);
+var hargalatte= parseInt(tulis.latte.value) * parseInt(tulis.latte1.value);
+var hargatiramisu= parseInt(tulis.tiramisu.value) * parseInt(tulis.tiramisu1.value);
+var totalharga = hargapesto + hargacannelloni + hargatortellini+ hargaespresso + hargalatte + hargatiramisu;
+if (totalharga > 50000)
+{
+tulis.Bayar.value = totalharga;
+tulis.Diskon.value = 10000;
+tulis.Jumlah.value = totalharga - parseInt(tulis.Diskon.value);
+}
+else
+{
+tulis.Bayar.value = totalharga;
+tulis.Diskon.value = 0;
+tulis.Jumlah.value = totalharga;
+}
+}
+function awal(){
+document.formRestaurant.reset();
+}
+//-->
+</script>
+</head>
+
+<body>
+<h2 align="center"><font color="#000099"><strong>FORM PEMESANAN HARGA THE ROMANTIQUE RESTAURANT</strong></font></h2>
+<form name="formRestaurant" action="#">
+<table width="644" border="1" align="center">
+<tr bgcolor="#00FF00">
+<th width="30" height="24" scope="col">No</th>
+<th width="211" scope="col">Makanan atau Minuman</th>
+<th width="180" scope="col">Harga</th>
+<th width="195" scope="col">Pesan</th>
+</tr>
+<tr bgcolor="#0000CC">
+<td style="text-align:center"><font color="#FFFFFF">1.</font></td>
+<td><font color="#FFFFFF">Steak</font></td>
+<td><font color="#FFFFFF">@</font> <input type="text" name="steak" value="75000" size="20" disabled="disabled"/></td>
+<td><input name="steak1" type="text" onKeyUp="Restaurant()" value="0" size="23"/></td>
+</tr>
+<tr bgcolor="#6600CC">
+<td style="text-align:center"><font color="#FFFFFF">2.</font></td>
+<td><font color="#FFFFFF">Fried Chicken</font></td>
+<td><font color="#FFFFFF">@</font>
+<input type="text" name="fried chicken" value="42500" size="20" disabled="disabled"/></td>
+<td><input name="fc1" type="text" onKeyUp="Restaurant()" value="0" size="23"/></td>
+</tr>
+<tr bgcolor="#FF00FF">
+<td style="text-align:center"><font color="#FFFFFF">3.</font></td>
+<td><font color="#FFFFFF">Kentang Goreng</font></td>
+<td><font color="#FFFFFF">@</font>
+<input type="text" name="kentang" value="15000" size="20" disabled="disabled"/></td>
+<td><input name="kg1" type="text" onKeyUp="Restaurant()" value="0" size="23"/></td>
+</tr>
+<tr bgcolor="#0000CC">
+<td style="text-align:center"><font color="#FFFFFF">4.</font></td>
+<td><font color="#FFFFFF">Coffe Latte</font></td>
+<td><font color="#FFFFFF">@</font>
+<input type="text" name="latte" value="30000" size="20" disabled="disabled"/></td>
+<td><input name="latte1" type="text" onKeyUp="Restaurant()" value="0" size="23"/></td>
+</tr>
+<tr bgcolor="#6600CC">
+<td style="text-align:center"><font color="#FFFFFF">5.</font></td>
+<td><font color="#FFFFFF">Pancake</font></td>
+<td><font color="#FFFFFF">@</font>
+<input type="text" name="pancake" value="20000" size="20" disabled="disabled"/></td>
+<td><input name="Pancake1" type="text" onKeyUp="Restaurant()" value="0" size="23"/></td>
+</tr>
+<tr bgcolor="#FF00FF">
+<td><div style="text-align:center"><font color="#FFFFFF">6.</font></td>
+<td><font color="#FFFFFF">Jus Mangga</font></td>
+<td><font color="#FFFFFF">@</font>
+<input type="text" name="mangga" value="15000" size="20" disabled="disabled"/></td>
+<td><input name="tiramisu1" type="text" onKeyUp="Restaurant()" value="0" size="23"/></td>
+</tr>
+<tr bgcolor="#00FF00">
+<td colspan="3" style="text-align:center"><strong>Total Harga </strong></td>
+<td><input name="Bayar" type="text" disabled="disabled" value="-" size="23"/></td>
+</tr>
+<tr bgcolor="#00FF00">
+<td colspan="3" style="text-align:center"><strong>Diskon * </strong></td>
+<td><input name="Diskon" type="text" disabled="disabled" value="-" size="23"/></td>
+</tr>
+<tr bgcolor="#00FF00">
+<td colspan="3" style="text-align:center"><strong>Jumlah Dibayar </strong></td>
+<td><input name="Jumlah" type="text" disabled="disabled" value="-" size="23"/></td>
+</tr>
+</table>
+<p align="center"> *: Pelanggan mendapatkan Diskon Rp.10.000 untuk pembelian di atas Rp.50.000, tidak berlaku untuk kelipatan.</p>
+<div id="Layer1" style="position:absolute; width:169px; height:39px; z-index:1; left: 938px; top: 442px;">
+<input type="button" value="R e s e t" onClick="awal()"/>
+</div>
+</form>
+</body>
+</html>
